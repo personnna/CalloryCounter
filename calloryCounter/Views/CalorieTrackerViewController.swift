@@ -11,7 +11,6 @@ import SwiftData
 final class CalorieTrackerViewController: UIViewController {
     private let viewModel: CalorieTrackerViewModel
     
-    // UI Elements
     private let dailyTotalView = DailyTotalView()
     private let foodInputView = FoodInputView()
     private let tableView = UITableView(frame: .zero, style: .plain)
@@ -49,14 +48,11 @@ final class CalorieTrackerViewController: UIViewController {
         title = "Калории"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        // Daily Total
         view.addSubview(dailyTotalView)
         
-        // Input
         foodInputView.delegate = self
         view.addSubview(foodInputView)
         
-        // TableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FoodItemCell.self, forCellReuseIdentifier: FoodItemCell.identifier)
@@ -67,7 +63,6 @@ final class CalorieTrackerViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = true
         view.addSubview(tableView)
         
-        // Empty State
         emptyStateImageView.image = UIImage(systemName: "fork.knife")
         emptyStateImageView.tintColor = .systemGray3
         view.addSubview(emptyStateImageView)

@@ -51,14 +51,9 @@ final class FoodItemCell: UITableViewCell {
         photoImageView.layer.cornerRadius = 8
         containerView.addSubview(photoImageView)
         
-        caloriesLabel.font = .systemFont(ofSize: 32, weight: .bold)
+        caloriesLabel.font = .systemFont(ofSize: 16, weight: .bold)
         caloriesLabel.textColor = .systemBlue
         containerView.addSubview(caloriesLabel)
-        
-        caloriesUnitLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        caloriesUnitLabel.textColor = .systemGray
-        caloriesUnitLabel.text = "kcal"
-        containerView.addSubview(caloriesUnitLabel)
     }
     
     private func setupConstraints() {
@@ -82,11 +77,6 @@ final class FoodItemCell: UITableViewCell {
         caloriesLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(12)
             make.top.equalToSuperview().inset(12)
-        }
-        
-        caloriesUnitLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(12)
-            make.top.equalTo(caloriesLabel.snp.bottom).offset(2)
         }
     }
     
